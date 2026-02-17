@@ -1,0 +1,16 @@
+builds:
+  include:
+    - "packages.aarch64-darwin.jov"
+    - "packages.aarch64-darwin.jov-gateway"
+    - "packages.aarch64-darwin.jov-tools"
+    - "packages.aarch64-darwin.jov-app"
+    - "packages.x86_64-linux.jov"
+    - "packages.x86_64-linux.jov-gateway"
+    - "packages.x86_64-linux.jov-tools"
+    - "checks.aarch64-darwin.gateway"
+    - "checks.x86_64-linux.gateway"
+    - "checks.x86_64-linux.gateway-tests"
+    - "checks.x86_64-linux.config-options"
+    - "checks.x86_64-linux.default-instance"
+    - "checks.x86_64-linux.config-validity"
+    - "checks.x86_64-linux.package-contents"

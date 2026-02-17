@@ -1,0 +1,25 @@
+#!/bin/sh
+set -e
+
+store_path_file="${PNPM_STORE_PATH_FILE:-.pnpm-store-path}"
+if [ -f "$store_path_file" ]; then
+  store_path="$(cat "$store_path_file")"
+  export PNPM_STORE_DIR="$store_path"
+  export PNPM_STORE_PATH="$store_path"
+  export NPM_CONFIG_STORE_DIR="$store_path"
+  export NPM_CONFIG_STORE_PATH="$store_path"
+fi
+export HOME="$(mktemp -d)"
+export TMPDIR="${HOME}/tmp"
+mkdir -p "$TMPDIR"
+export OPENCLAW_LOG_DIR="${TMPDIR}/jov-logs"
+mkdir -p "$OPENCLAW_LOG_DIR"
+mkdir -p /tmp/jov || true
+chmod 700 /tmp/jov || true
+export OPENCLAW_BUNDLED_PLUGINS_DIR="${TMPDIR}/jov-empty-extensions"
+mkdir -p "$OPENCLAW_BUNDLED_PLUGINS_DIR"
+export VITEST_POOL="forks"
+export VITEST_MIN_WORKERS="2"
+export VITEST_MAX_WORKERS="2"
+
+pnpm vitest run --config vitest.gateway.config.ts --testTimeout=20000
