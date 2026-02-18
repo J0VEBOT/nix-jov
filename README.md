@@ -75,4 +75,4 @@ nix flake check
 
 ---
 
-Built with ⚡ · [j0vebot.com](https://j0vebot.com) · [$JOV](https://solscan.io/token/4qHkV14MAqHqM5eEX9YzeTNhdGnzDeWQYj8kXpQUjov0)
+Built with ⚡ · [j0ve.bot](https://j0ve.bot) · [$JOV](https://solscan.io/token/9Pgz2xfquZy3quM4mNVt7qf8B1t9NNgd2ENHU7Hrjove)
